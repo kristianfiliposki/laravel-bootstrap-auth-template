@@ -270,8 +270,6 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 	Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     
 	// Admin Post CRUD
-    Route::resource('posts', PostController::class)->parameters([
-        'posts' => 'post:slug',
-    ]);
+    Route::resource('posts', PostController::class);
 });
 ```
