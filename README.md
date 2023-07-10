@@ -22,8 +22,9 @@ Questo git-template fornisce lo scaffold di una web application realizzata con L
 - Clonare il repository appena creato sul proprio PC
 - Creare un database
 - Creare un file `.env`. Si può procedere copiandolo da `.env.example` e rinominandolo
-- Per creare la APP_KEY nel `.env`, lanciare il comando:
+- Per creare la APP_KEY nel `.env`, lanciare il comando dedicato, ma prima installare le dipendenze composer
 	```bash
+    composer install
 	php artisan key:generate
 	```
 - Controllare che tutti i dati nel `.env` siano corretti (attenzione al database)
@@ -31,9 +32,8 @@ Questo git-template fornisce lo scaffold di una web application realizzata con L
 	```bash
 	php artisan migrate:fresh --seed
 	```
-- Installare le dipendenze PHP e lanciare il progetto
+- Lanciare il progetto tramite il server built-in
 	```bash
-	composer install
 	php artisan serve
 	```
 - Installare le dipendenze NPM e lanciare il progetto
