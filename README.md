@@ -240,7 +240,8 @@ php artisan make:model NomeModello -rmsR
 
 Qui trovate la lista dei parametri accettati da [`make:model`](https://artisan.page/#makemodel)
 
-Infine definire migration e seeder e lanciarli usando il comando:
+A questo punto potete andare a definire il comportamento di migration e seeder nei relativi file.
+Infine lanciate entrambi usando il comando:
 ```bash
 php artisan migrate:fresh --seed
 ```
