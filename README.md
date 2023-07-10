@@ -154,6 +154,8 @@ Questo git-template fornisce lo scaffold di una web application realizzata con L
 	```
 	</details>
 
+ - Attenzione!! A questo punto avrete degli errori se non completate prima la parte successiva "ROUTES E CONTROLLER", non vi spaventate, è normale
+
 # REFACTORING DASHBOARD - ROUTES E CONTROLLER
 
 - Creare un controller `Admin/DashboardController` 
