@@ -210,6 +210,15 @@ Questo git-template fornisce lo scaffold di una web application realizzata con L
 	```
 	In questo modo, dopo l’autenticazione, l’utente verrà reindirizzato alla dashboard, che risponde alla rotta `/admin`
 
+- Modificare il link alla dashboard dal menu del layout di base qui: resources/views/layouts/app.blade.php:70
+	```php
+    <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
+	```
+     modificare in:
+	```php
+    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">{{__('Dashboard')}}</a>
+	```
+
 # RISORSE: MODEL, CONTROLLER, MIGRATION, SEEDER
 
 Si possono creare tutti insieme con:
