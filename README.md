@@ -261,15 +261,26 @@ Procedere come in passato, ma inserendo le rotte del Resource Controller all'int
 
 ```php
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\PostController; // <---- Importare il controller da usare!!
 
 // ...
 
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
 
 	Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    
+	
 	// Admin Post CRUD
-    Route::resource('posts', PostController::class);
+	Route::resource('posts', PostController::class);
 });
+```
+
+A questo punto dal nostro Resource Controller possiamo popolare i vari metodi (index, create ecc..) restituendo le relative viste o validando/lavorando i dati come sempre.
+
+L'unica differenza sarà il percorso in cui salvare le viste. Se prima si creava sotto "views" una cartella "nomeRisorsa" con tutte le viste:
+```bash
+/resources/views/posts/*.blade.php
+```
+Adesso invece quella cartella andrà creata sotto "views/admin"
+```bash
+/resources/views/admin/posts/*.blade.php
 ```
