@@ -188,14 +188,12 @@ Questo git-template fornisce lo scaffold di una web application realizzata con L
 
 	Route::middleware(['auth'])
 		->prefix('admin') //definisce il prefisso "admin/" per le rotte di questo gruppo
-		->namespace('Admin') //definisce il namespace per i Controller chiamati in questo gruppo
 		->name('admin.') //definisce il pattern con cui generare i nomi delle rotte cioè "admin.qualcosa"
 		->group(function () {
 		
 			//Siamo nel gruppo quindi:
 			// - il percorso "/" diventa "admin/"
 			// - il nome della rotta ->name("dashboard") diventa ->name("admin.dashboard")
-			// - il controller DashboardController appartiene al namespace Admin
 			Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 	});
@@ -265,7 +263,7 @@ use App\Http\Controllers\Admin\PostController;
 
 // ...
 
-Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
 
 	Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     
